@@ -121,7 +121,7 @@ then
 		sizes+=($size_pid)
 	done
 	
-	printf "%-10s\t%-50s\t%-15s\n" "PID" "NAME" "CACHE_SIZE"
+	printf "%-10s\t%-50s\t%-15s\n" "PID" "NAME" "CACHE_SIZE(Bytes)"
 	for ((index=0; index<$len; index++)) 
 	do
 		printf "%-10s\t%-50s\t%-15s\n" ${pids[$index]} ${names[$index]} ${sizes[$index]}
@@ -138,7 +138,7 @@ then
 		then
 			let sizet=($sizet*$pagesz)	
 		fi	
-		printf "%-50s\t%-15s\n" "NAME" "CACHE_SIZE"
+		printf "%-50s\t%-15s\n" "NAME" "CACHE_SIZE(Bytes)"
 		printf "%-50s\t%-15s\n" $top $sizet
 
 	elif [ -d $top ]
@@ -161,7 +161,7 @@ then
 			fi
 		done	
 
-		printf "%-50s\t%-15s\n" "NAME" "CACHE_SIZE"
+		printf "%-50s\t%-15s\n" "NAME" "CACHE_SIZE(Bytes)"
 		for ((index=0; index<${#fs_dict[@]}; index++)) 
 		do
 			printf "%-50s\t%-15s\n" ${fs_dict[$index]} ${sizes[$index]}
