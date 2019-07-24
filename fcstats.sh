@@ -67,14 +67,14 @@ fcstat=""
 top=10
 
 
-if [ $1 == "pid" ]
+if [ $1 == "-pid" ]
 then
 	fcstat="process"
 	if [ $# == 2 ]
 	then
 		top=$2
 	fi	
-elif [ $1 == "file" ]
+elif [ $1 == "-file" ]
 then
 	fcstat="file"
 	if [ $# == 2 ]
@@ -83,8 +83,8 @@ then
 	fi
 else
 	echo "fcstat [pid|file] [1-10]|[filename]"
-	echo "--pid: find the process who use cache memory in [1-10] situsation"
-	echo "--file: find out how many cache memory the file or dir being using."
+	echo "-pid: find the process who use cache memory in [1-10] situsation"
+	echo "-file: find out how many cache memory the file or dir being using."
 	tmp_cc_file="cc_test_tmp.*"
 	rm -rf $tmp_cc_file $main_test_file
 	exit 0
